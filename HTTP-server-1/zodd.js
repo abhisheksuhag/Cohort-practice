@@ -14,7 +14,7 @@ function validateInput(obj){
 
 validateInput({
     email: "abc@gmail.com",
-    password: "systemhailadle"
+    password: "systemmm"
 })
 
 app.listen(3000);
