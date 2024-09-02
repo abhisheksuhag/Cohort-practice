@@ -1,9 +1,8 @@
  // write basic express boilerplate code,
- // with express.json() middleware
+
 
  const express= require('express');
 const { createTodo, updatetodo } = require('./types');
-const createApplication = require('express/lib/express');
  const port=3000;
  const app= express();
 
@@ -27,8 +26,12 @@ const createApplication = require('express/lib/express');
     })
  }) 
 
- app.get("/todos", function( req, res){
-   
+
+
+ app.get("/todos", async function( req, res){
+   const todos = await todo.find({});
+
+   res.json({todos})
  })
  
  app.put("/completed", function(req, res){
@@ -39,10 +42,5 @@ const createApplication = require('express/lib/express');
      return;
    }
 })
-
-
-
-
-
 
  app.listen(port);
