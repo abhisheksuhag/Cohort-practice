@@ -46,30 +46,47 @@
 
 // export default App;
 
-import {useEffect, useState} from "react";
+
+
+
+
+import { useEffect, useState } from "react";
 import axios from "axios";
-function App(){
 
-  const [todos, setTodos]= useState([]);
+function App({ id }) {
+  const [todo, setTodo] = useState(null);
 
-  useEffect(()=>{
-    axios.get("https://sum-server.100xdevs.com/todos")
-    .then(function(response){
-      setTodos(response.data.todos);
-    })
-  },[]);
+  useEffect(() => {
+    // Make sure you're using the correct prop here (id)
+    axios
+      .get(`https://sum-server.100xdevs.com/todos?id=${id}`)
+      .then(function (response) {
+        setTodo(response.data.todo); // Assuming response data is a single todo object
+      })
+      .catch(function (error) {
+        console.log("error fetching the todo: ", error);
+      });
+  }, [id]); // Correct dependency array
 
-  return <div>
-    {todos.map(todos => <Todo title={todos.title} description={todos.description} key={todos.title} />) }
-  </div>
-}
+  // Handle loading state
+  if (!todo) {
+    return <div>Loading...</div>;
+  }
 
-
-function Todo({title, description}){
+  return (
     <div>
-    <h1>{title}</h1>
-    <h3>{description}</h3>
+      <Todo title={todo.title} description={todo.description} />
     </div>
-
+  );
 }
+
+function Todo({ title, description }) {
+  return (
+    <div>
+      <h1>{title}</h1>
+      <h3>{description}</h3>
+    </div>
+  );
+}
+
 export default App;
