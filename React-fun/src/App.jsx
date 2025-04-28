@@ -50,43 +50,80 @@
 
 
 
-import { useEffect, useState } from "react";
-import axios from "axios";
+// import { useEffect, useState } from "react";
+// import axios from "axios";
 
-function App({ id }) {
-  const [todo, setTodo] = useState(null);
+// function App({ id }) {
+//   const [todo, setTodo] = useState(null);
 
-  useEffect(() => {
-    // Make sure you're using the correct prop here (id)
-    axios
-      .get(`https://sum-server.100xdevs.com/todos?id=${id}`)
-      .then(function (response) {
-        setTodo(response.data.todo); // Assuming response data is a single todo object
-      })
-      .catch(function (error) {
-        console.log("error fetching the todo: ", error);
-      });
-  }, [id]); // Correct dependency array
+//   useEffect(() => {
+//     // Make sure you're using the correct prop here (id)
+//     axios
+//       .get(`https://sum-server.100xdevs.com/todos?id=${id}`)
+//       .then(function (response) {
+//         setTodo(response.data.todo); // Assuming response data is a single todo object
+//       })
+//       .catch(function (error) {
+//         console.log("error fetching the todo: ", error);
+//       });
+//   }, [id]); // Correct dependency array
 
-  // Handle loading state
-  if (!todo) {
-    return <div>Loading...</div>;
-  }
+//   // Handle loading state
+//   if (!todo) {
+//     return <div>Loading...</div>;
+//   }
 
-  return (
-    <div>
-      <Todo title={todo.title} description={todo.description} />
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <Todo title={todo.title} description={todo.description} />
+//     </div>
+//   );
+// }
 
-function Todo({ title, description }) {
-  return (
-    <div>
-      <h1>{title}</h1>
-      <h3>{description}</h3>
-    </div>
-  );
+// function Todo({ title, description }) {
+//   return (
+//     <div>
+//       <h1>{title}</h1>
+//       <h3>{description}</h3>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+// MainPage.jsx
+
+import {useState} from "react";
+
+function App(){
+
+  const [count, setCount] = useState(0);
+  return <div>
+    <button onClick={()=>{
+      setCount(count+1);
+    }}>Click Me {count}</button>
+  </div>
+
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

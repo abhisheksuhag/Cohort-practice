@@ -61,17 +61,118 @@
 //     console.log(d);
 // })
 
-function Abhishek(){
-    const d= new Promise(function(resolve){
-        resolve("yoozxvo");
-    });
-    return d;
+// function Abhishek(){
+//     const d= new Promise(function(resolve){
+//         resolve("yoozxvo");
+//     });
+//     return d;
+// }
+
+// function main (){
+//     Abhishek().then(function(value){
+//         console.log(value);
+//     });
+// }
+
+// main();
+
+
+// const personArray= [ "hello", "hi", "hey"];
+// const genderArray = [ "male", "female" , "male"];
+
+// for( let i=0; i<personArray.length;i++){
+//     if (genderArray[i] == "male")
+//     {
+//         console.log(personArray[i]);
+//     }
+// }
+
+
+
+// const allUsers= [ {
+//     firstName: "Abhishek",
+//     gender: "Male"
+// }, {
+//     firstName: "yamam",
+//     gender: "Male"
+// } ,{
+//     firstName: "Priya",
+//     gender: "Female"
+// }];
+
+// for( let i=0; i<allUsers.length;i++){
+//     if(allUsers[i]["gender"] == "Male"){
+//         console.log(allUsers[i]["firstName"]);
+//     }
+// }
+
+
+
+
+// function sum(a, b){
+//     return a + b;
+// }
+
+// const value = sum(3,4);
+// console.log(value);
+
+
+
+// function sum(num1, num2, fnToCall){
+//     let result = num1 + num2;
+//     fnToCall(result);
+// }
+
+// function displayResult(data){
+//     console.log("I am using callback functions now " + data)
+//     console.log("result of the sum is : " + data);
+// }
+
+
+// function displayResultPassive(data){
+//     console.log("sum's result is  : " + data);
+// }
+
+// // you are only allowed to call one function after this
+// // How will you display Result of a sum
+
+// // const ans= sum(1,2);
+// // displayResult(ans);
+
+// const ans= sum(1,2 , displayResult);
+
+
+
+// arthemetic callbacks 
+// function calculateArithmetic( a, b, type){
+//     const ans = type(a,b);
+//     return ans;  
+// }
+
+// function sum(a,b){
+//     return a+b;
+// }
+//  function subtract(a,b){
+//     return a-b;
+//  }
+
+// function multiply(a,b){
+//     return a*b;
+// }
+
+
+// const value = calculateArithmetic(2,9, subtract);
+// console.log(value);
+
+
+
+function greet(){
+    console.log("hello world");
 }
 
-function main (){
-    Abhishek().then(function(value){
-        console.log(value);
-    });
+function greetAliens(){
+    console.log("hello Aliens");
 }
 
-main();
+setTimeout(greetAliens, 1 * 2000);
+greet();
