@@ -201,3 +201,19 @@
 
 
 
+function square(n){
+    return n*n;
+}
+
+function cube(n){
+    return n*n*n;
+}
+
+function calculate(a,b, opp){
+    const val1= opp(a);
+    const val2= opp(b);
+
+    return val1 + val2;
+}
+
+console.log(calculate(1,2, square));

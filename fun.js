@@ -166,13 +166,50 @@
 
 
 
-function greet(){
-    console.log("hello world");
+// function greet(){
+//     console.log("hello world");
+// }
+
+// function greetAliens(){
+//     console.log("hello Aliens");
+// }
+
+// setTimeout(greetAliens, 1 * 2000);
+// greet();
+
+
+// function asyncfunctionn(){
+//     let p = new Promise(function(resolve){
+//     resolve("hi there");
+// });
+// return p;
+// }
+
+// const value= asyncfunctionn();
+// value.then(function(data){
+//     console.log(data);
+// })
+
+
+
+function asyncfunctionn(){
+    console.log("yeahh!")
+    let p = new Promise(function(resolve){
+        setTimeout(function(){
+            resolve('hi there')
+        }, 2000)
+    });
+    return p;
 }
 
-function greetAliens(){
-    console.log("hello Aliens");
+async function main(){
+    let value = await  asyncfunctionn()
+    setTimeout(function(){
+        console.log("yooo mama!");
+    },2000);
+    console.log(value);
+    
 }
-
-setTimeout(greetAliens, 1 * 2000);
-greet();
+console.log("1");
+main();
+console.log("2");
