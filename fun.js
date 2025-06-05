@@ -192,24 +192,163 @@
 
 
 
-function asyncfunctionn(){
-    console.log("yeahh!")
-    let p = new Promise(function(resolve){
-        setTimeout(function(){
-            resolve('hi there')
-        }, 2000)
-    });
-    return p;
-}
+// function asyncfunctionn(){
+//     console.log("yeahh!")
+//     let p = new Promise(function(resolve){
+//         setTimeout(function(){
+//             resolve('hi there')
+//         }, 2000)
+//     });
+//     return p;
+// }
 
-async function main(){
-    let value = await  asyncfunctionn()
-    setTimeout(function(){
-        console.log("yooo mama!");
-    },2000);
-    console.log(value);
+// async function main(){
+//     let value = await  asyncfunctionn()
+//     setTimeout(function(){
+//         console.log("yooo mama!");
+//     },2000);
+//     console.log(value);
     
+// }
+// console.log("1");
+// main();
+// console.log("2");
+
+
+
+// function abc(){
+//     let p = new Promise(function(resolve){
+//         resolve("hi there!");
+
+//     });
+//     return p;
+// }
+
+
+// async function main(){
+//     const value=await abc();
+//     console.log(value);
+// }
+
+// main();
+
+
+// function ownSetTimeout(fn, time){
+//     setTimeout(fn, time);
+// }
+
+// ownSetTimeout(function(){
+//     console.log("heyyy!");
+// },5000);
+
+
+// function ownSetTimeout(duration){
+//     const p= new Promise(function(resolve){
+//         setTimeout(resolve,duration);
+//     });
+//     return p;
+// }
+
+// ownSetTimeout(5000)
+// .then(function(){
+//     console.log("after 2 second");
+// })
+
+
+// function ownPromise(duration){
+//     const p= new Promise(function(resolve){
+//         setTimeout(function(){
+//             resolve();
+//         },duration);
+//     });
+//     return p;
+// }
+
+// const done= ownPromise(2000);
+// done.then(function(){
+//     console.log("hi there");
+// })
+
+
+// function getData(duration){
+//     const p= new Promise(function(resolve){
+//         setTimeout(function(){
+//             resolve();
+//         },duration);
+//     });
+//     return p;
+// }
+
+// const ans = getData(1000);
+// ans.then(console.log("Data Recieved"));
+
+// function promisedfn(duration){
+//     const p= new Promise(function(resolve){
+//         setTimeout(function(){
+//             resolve();
+//         }, duration);
+//     });
+//     return p;
+// }
+
+// const done =promisedfn(2000);
+// done.then(function(){
+//     console.log("hi there");
+// });
+
+
+
+
+// async function main(){
+//     try{
+//         const user= await getUser();
+//         const profile = await getProfile(user.id);
+//         console.log(profile);
+//     }
+//     catch(err){
+//         console.log(err);
+//     }
+// }
+
+// main();
+
+
+// async function fetch1() {
+//   return new Promise((res) => setTimeout(() => res("One"), 1000));
+// }
+// async function fetch2() {
+//   return new Promise((res) => setTimeout(() => res("Two"), 1000));
+// }
+
+
+// async function main(){
+//     const [res1, res2] = await Promise.all([fetch1(), fetch2()]);
+//     console.log(res1);
+//     console.log(res2);
+// }
+
+// 6. Real-world logic: Retry on failure
+// Write a function retry(fn, retries) that tries to run an async function fn and retries up to retries times if it fails.
+
+async function retry(fn, retries) {
+    try {
+        await fn();
+    } catch (error) {
+        if (retries > 0) {
+            console.log("Retries left", retries);
+            return retry(fn, retries - 1);
+        }
+        console.log(error);
+    }
 }
-console.log("1");
-main();
-console.log("2");
+ 
+retry(
+    () =>
+        new Promise((res, rej) =>
+            setTimeout(() => rej("Can't handle it"), 1000),
+        ),
+    4,
+);
+
+
+// 7. 
