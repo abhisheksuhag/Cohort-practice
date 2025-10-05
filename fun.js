@@ -330,25 +330,75 @@
 // 6. Real-world logic: Retry on failure
 // Write a function retry(fn, retries) that tries to run an async function fn and retries up to retries times if it fails.
 
-async function retry(fn, retries) {
-    try {
-        await fn();
-    } catch (error) {
-        if (retries > 0) {
-            console.log("Retries left", retries);
-            return retry(fn, retries - 1);
-        }
-        console.log(error);
-    }
-}
- 
-retry(
-    () =>
-        new Promise((res, rej) =>
-            setTimeout(() => rej("Can't handle it"), 1000),
-        ),
-    4,
-);
+// async function retry(fn, retries) {
+//     try {
+//         await fn();
+//     } catch (error) {
+//         if (retries > 0) {
+//             console.log("Retries left", retries);
+//             return retry(fn, retries - 1);
+//         }
+//         console.log(error);
+//     }
+// }
+
+// retry(
+//     () =>
+//         new Promise((res, rej) =>
+//             setTimeout(() => rej("Can't handle it"), 1000),
+//         ),
+//     4,
+// );
 
 
-// 7. 
+
+
+// const d = new Date();
+// console.log(Date);
+// console.log(d);
+
+// const p = new Promise(function(resolve){
+//     resolve("hi there");
+
+// });
+
+// console.log(Promise);
+// const ab = p.then(function(done){
+//     console.log(done);
+// });
+
+// ab;
+
+// const myObject = {
+//     cpp: "C++",
+//     sft: "swift",
+//     rb: "ruby on rails"
+// }
+
+// for (const key in myObject) {
+    // console.log(myObject[key]);
+//     console.log(`${key} is the shortcut for ${myObject[key]}`);
+// }
+
+// for loop in js-
+// can use simple for loop and while loop on anything in js
+// but for objects and arrays, there are some specials loops
+// like for array(this for of will not work on object) - for (const element of object) {
+    
+// }
+
+// like for object-  for (const key in object) {    
+// }
+
+const coding = ["ruby", "java", "python", "cpp"];
+
+// coding.forEach(function (names){
+//     console.log(names);
+// });
+
+// coding.forEach((names)=>( console.log(names)))
+
+// function printMe(names){
+    // console.log(names);
+// }
+// coding.forEach(printMe);
