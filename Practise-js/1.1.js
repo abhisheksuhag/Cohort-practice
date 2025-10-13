@@ -218,11 +218,23 @@
 
 // console.log(calculate(1,2, square));
 
-async function getAllUsers(){
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const data = await response.json();
-    console.log(data);
+// async function getAllUsers(){
+//     try { const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//     const data = await response.json();
+//     console.log(data);
+//     } catch (error){
+//         console.log("Error: ", error);
+//     }
+// }
 
-}
+// getAllUsers();
 
-getAllUsers();
+fetch("https://api.github.com/users/abhisheksuhag")
+.then((response)=>{
+    return response.json();
+})
+.then((data)=>{
+    if(!data.location)console.log("No location found");
+    else {console.log(data.location);}
+})
+.catch((error)=> console.log(error));
