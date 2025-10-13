@@ -201,19 +201,28 @@
 
 
 
-function square(n){
-    return n*n;
+// function square(n){
+//     return n*n;
+// }
+
+// function cube(n){
+//     return n*n*n;
+// }
+
+// function calculate(a,b, opp){
+//     const val1= opp(a);
+//     const val2= opp(b);
+
+//     return val1 + val2;
+// }
+
+// console.log(calculate(1,2, square));
+
+async function getAllUsers(){
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const data = await response.json();
+    console.log(data);
+
 }
 
-function cube(n){
-    return n*n*n;
-}
-
-function calculate(a,b, opp){
-    const val1= opp(a);
-    const val2= opp(b);
-
-    return val1 + val2;
-}
-
-console.log(calculate(1,2, square));
+getAllUsers();
