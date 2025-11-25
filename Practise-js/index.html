@@ -6,6 +6,15 @@
     <title>DOM Manipulation</title>
 </head>
 <script>
+    let timeout;
+    function debouncedPopulateDiv(){
+        clearTimeout(timeout);
+        timeout = setTimeout(function(){
+            populateDiv();
+        },300 );
+        clearTimeout(timeout);
+    }
+    
     function populateDiv(){
         const a = document.getElementById("firstNumber").value;
         const b = document.getElementById("secondNumber").value;

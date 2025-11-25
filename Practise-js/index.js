@@ -9,4 +9,13 @@ app.get("/", (req, res)=>{
     res.send(sum.toString());
 });
 
+app.get("/interest", ( req, res)=>{
+    const principal =  parseInt(req.query.principal);
+    const rate =  parseInt(req.query.rate);
+    const time  = parseInt(req.query.time);
+
+    const amount = (principal * rate * time) / 100;
+    res.send(amount.toString());
+})
+
 app.listen(8000);
