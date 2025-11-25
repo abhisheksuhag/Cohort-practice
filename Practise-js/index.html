@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<script>
+    function populateDiv(){
+        const a = document.getElementById("firstNumber").value;
+        const b = document.getElementById("secondNumber").value;
+        
+        const number =document.getElementById("finalSum");
+        // .innerHTML= parseInt(a) + parseInt(b);
+        fetch(`https://sum-server.100xdevs.com/sum?a=${a}&b=${b}`);
+        console.log(number);
+    }
+</script>
+<body>
+    <div>
+        <input onInput="populateDiv()" id="firstNumber" type="number" placeholder="Enter first number" ></body><br></br>
+        <input onInput="populateDiv()" id="secondNumber" type="number" placeholder="Enter second number" ></input><br></br>
+        <button onClick="populateDiv()">Add Numbers</button>
+        <div id="finalSum"></div>
+    </div>
+</body>
+</html> 

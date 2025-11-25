@@ -390,7 +390,7 @@
 // like for object-  for (const key in object) {    
 // }
 
-const coding = ["ruby", "java", "python", "cpp"];
+// const coding = ["ruby", "java", "python", "cpp"];
 
 // coding.forEach(function (names){
 //     console.log(names);
@@ -402,3 +402,38 @@ const coding = ["ruby", "java", "python", "cpp"];
     // console.log(names);
 // }
 // coding.forEach(printMe);
+
+
+// const coding = ["js", "ruby", "java", "python", "cpp"]
+
+// coding.forEach(function(val){
+//     console.log(val);
+// })
+
+// coding.forEach((item)=> console.log(item));
+
+// function printMe(val){
+//     // console.log(val);
+// }
+// // coding.forEach(printMe)
+
+// coding.forEach((item, index, arr)=>{
+//     // console.log(item, index, arr);
+// })
+
+// const myCoding = [
+//     {
+//         languageName: "javascript",
+//         languageFileName: "js"
+//     },
+//     {
+//         languageName: "java",
+//         languageFileName: "java"
+//     },
+//     {
+//         languageName: "python",
+//         languageFileName: "py"
+//     },
+// ]
+
+// myCoding.forEach((item)=> console.log(item.languageName))
