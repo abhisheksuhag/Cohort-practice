@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const { Admin } = require("../db/index");
 const secret = require("../index");
 
 function adminMiddleware ( req, res, next) {

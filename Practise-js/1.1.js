@@ -229,12 +229,18 @@
 
 // getAllUsers();
 
-fetch("https://api.github.com/users/abhisheksuhag")
-.then((response)=>{
-    return response.json();
-})
-.then((data)=>{
-    if(!data.location)console.log("No location found");
-    else {console.log(data.location);}
-})
-.catch((error)=> console.log(error));
+// fetch("https://api.github.com/users/abhisheksuhag")
+// .then((response)=>{
+//     return response.json();
+// })
+// .then((data)=>{
+//     if(!data.location)console.log("No location found");
+//     else {console.log(data.location);}
+// })
+// .catch((error)=> console.log(error));
+
+const arr = [1,2];
+const [a,b ] = arr;
+// console.log( a);
+// console.log(b);
+

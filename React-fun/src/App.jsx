@@ -91,25 +91,39 @@
 
 // export default App;
 
+// import {useState} from "react";
 
+// function App(){
 
-// MainPage.jsx
+//   const [count, setCount] = useState(0);
+//   return <div>
+//     <button onClick={()=>{
+//       setCount(count+1);
+//     }}>Click Me {count}</button>
+//   </div>
 
-import {useState} from "react";
+// }
 
+// export default App;
+
+import { useState } from "react";
 function App(){
-
   const [count, setCount] = useState(0);
-  return <div>
-    <button onClick={()=>{
-      setCount(count+1);
-    }}>Click Me {count}</button>
-  </div>
-
+  console.log(count);
+  console.log(setCount);
+  
+   
+  function onClickHandler(){
+    setCount(count +1);
+  }
+  return (
+    <div>
+      <button onClick={onClickHandler}>Counter {count}</button>
+    </div>
+  )
 }
 
 export default App;
-
 
 
 
