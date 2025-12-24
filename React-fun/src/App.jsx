@@ -1,52 +1,45 @@
-// import { useState } from "react";
+import { useState } from "react";
 
-// function App() {
-//   const [todos, setTodos] = useState([
-//     {
-//       title: "go to the gym",
-//       description: "at 9Am",
-//       completed: false,
-//     },
-//     {
-//       title: "go to the store",
-//       description: "at 10Am",
-//       completed: true,
-//     },
-//   ]);
+function Todo(props){
+  return (
+    <div>
+      <h1>{props.title}</h1>
+      <h3>{props.description}</h3>
+    </div>
+  )
+}
 
-//   function addTodo() {
-//     setTodos([
-//       ...todos,
-//       {
-//         title: "go shoot",
-//         description: "at 11Am",
-//       },
-//     ]);
-//   }
+function App(){
+  const [todos , setTodos] = useState([{
+    title: "go to gym",
+    description: "go to gym from 7-9",
+    completed : false,
+  }, 
+  {
+    title: "Study DSA",
+    description:"study DSA from 7-9",
+    completed: true,
+  }]);
 
-//   return (
-//     <div>
-//       <button onClick={addTodo}>Add a random todo</button>
-//       {todos.map((todo, index) => (
-//         <Todo key={index} title={todo.title} description={todo.description} />
-//       ))}
-//     </div>
-//   );
-// }
+  function addTodo(){
+    setTodos([...todos, {
+      title:"some random title",
+      description:"Some random description"
+    }])
+  }
 
-// // Define the Todo component
-// function Todo({ title, description }) {
-//   return (
-//     <div>
-//       <h3>{title}</h3>
-//       <p>{description}</p>
-//     </div>
-//   );
-// }
+  return (
+    <div>
 
-// export default App;
+      <button onClick={addTodo}>Add a random todo</button>
+      {todos.map(function (todo){
+        return <Todo title={todo.title} description={todo.description} />
+      })}
+    </div>
+  )
+}
 
-
+export default App;
 
 
 
@@ -80,6 +73,7 @@
 //   );
 // }
 
+
 // function Todo({ title, description }) {
 //   return (
 //     <div>
@@ -90,6 +84,10 @@
 // }
 
 // export default App;
+
+
+
+
 
 // import {useState} from "react";
 
@@ -106,25 +104,57 @@
 
 // export default App;
 
-import { useState } from "react";
-function App(){
-  const [count, setCount] = useState(0);
-  console.log(count);
-  console.log(setCount);
+
+
+
+// import { useState } from "react";
+// function App(){
+//   const [count, setCount] = useState(0);
+//   console.log(count);
+//   console.log(setCount);
   
    
-  function onClickHandler(){
-    setCount(count +1);
-  }
-  return (
-    <div>
-      <button onClick={onClickHandler}>Counter {count}</button>
-    </div>
-  )
-}
+//   function onClickHandler(){
+//     setCount(count +1);
+//   }
+//   return (
+//     <div>
+//       <button onClick={onClickHandler}>Counter {count}</button>
+//     </div>
+//   )
+// }
 
-export default App;
+// // export default App;
 
+
+
+
+
+// import { useState } from "react";
+
+// function CustomButton( props){
+
+//   function onClickHandler(){
+//     props.setCount(props.count + 1);
+//   }
+
+//   return <button onClick={onClickHandler}>
+//     Counter {props.count}
+//   </button>
+// }
+
+
+// function App(){
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <div>
+//       <CustomButton count={count} setCount={setCount}></CustomButton>
+//     </div>
+//   )
+// }
+
+// export default App;
 
 
 
