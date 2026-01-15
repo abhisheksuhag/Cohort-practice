@@ -239,8 +239,77 @@
 // })
 // .catch((error)=> console.log(error));
 
-const arr = [1,2];
-const [a,b ] = arr;
+// const arr = [1,2];
+// const [a,b ] = arr;
 // console.log( a);
 // console.log(b);
 
+// const obj = {
+//     name: "abhi",
+//     normal: function(){ console.log(this.name)},
+//     arrow: ()=>{
+//          console.log(this.name)
+//     }
+// }
+// obj.normal();
+// obj.arrow();
+// normal funciton can be used as a constructor with new keyword 
+// but arrow function cannnot be used as a constructor. ( throws type error)
+// normal -> require return keyword for any return value
+// arrow-> can return value in the expression is of single line. 
+
+
+// sayHi();
+// function sayHi(){};
+// this works as funciton can be hoisted
+
+// greett();
+// const greett = function sayHi(){};
+// this does not work as function expression cannot be hoisted.
+
+
+// IIFE
+// (function(){
+//     console.log("runs instantly");
+// })();
+
+
+//  Template Literals
+// const name ="Abhishek";
+// console.log(`Hi, my name is ${name}`);
+
+// doTask(()=> console.log("Hi"));
+
+// promise
+// doTask().then(()=> console.log("done")).catch(err=>console.log(err));
+
+// async/await
+
+// async function run(){
+//     try {
+//         await doTask();
+//         console.log("done");
+//     }catch(e){
+//         console.log(e);
+//     }
+// }
+
+// maps
+// const numbers = [1,2,3,4,5];
+// const triple = numbers.map(num=> {return num* 3});
+// console.log(triple);
+
+// filter method
+// const numbers = [1,2,3,4,5];
+// const greaterThan3= numbers.filter((num)=>{
+//     return num>3;
+// })
+// console.log(greaterThan3);
+
+// reduce 
+const numbers = [1,2,3,4,5];
+const sumOfAll = numbers
+    .map(num=>num*3)
+    .reduce((acc, curr)=> acc+ curr, 0 )
+    .filter((num)=> num>4);
+console.log(sumOfAll);
